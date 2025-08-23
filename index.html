@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casamento - Sobre os Noivos</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background-color: #fdfaf6;
+      color: #333;
+    }
+
+    header {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: #eae6df;
+      color: #333;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .auth-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+      margin-right: 10px;
+    }
+
+    .login-btn {
+      padding: 6px 12px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #8c8c88;
+      color: white;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background: #6e6e6a;
+    }
+
+    .content {
+      padding: 120px 30px 30px 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    input, button {
+      padding: 10px;
+      margin: 6px 0;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #8c8c88;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #6e6e6a;
+    }
+
+    .logout-btn {
+      margin-top: 15px;
+      background: #a94442;
+    }
+
+    .logout-btn:hover {
+      background: #843534;
+    }
+
+    .link {
+      font-size: 0.9rem;
+      color: #4a6c8c;
+      word-break: break-word;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .confirmed {
+      color: #2a7a2a;
+      font-weight: 600;
+    }
+
+    .not-confirmed {
+      color: #a94442;
+      font-weight: 600;
+    }
+
+    h3 {
+      border-bottom: 1px solid #e0ddd5;
+      padding-bottom: 6px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span>Casamento - Sobre os Noivos</span>
+    <div>
+      <span id="authIcon" class="auth-icon">🔒</span>
+      <button class="login-btn" onclick="mostrarLogin()">Login</button>
+    </div>
+  </header>
+
+  <main class="content">
+    <div id="home" class="card">
+      <h2>Sobre os Noivos</h2>
+      <p>Bem-vindos à nossa página de casamento! Aqui você encontra informações sobre os noivos, a cerimônia e a festa.</p>
+      <p>Data: 12/10/2025</p>
+      <p>Local: Espaço Elegância, Cidade XYZ</p>
+    </div>
+
+    <div id="loginCard" class="card">
+      <h2>Login</h2>
+      <input type="email" id="email" placeholder="Digite seu e-mail">
+      <button onclick="login()">Entrar</button>
+    </div>
+
+    <div id="adminCard" class="card" style="display:none;">
+      <h2>Cadastrar Convidados</h2>
+      <input type="text" id="nomeConvidado" placeholder="Nome do convidado">
+      <input type="text" id="acompanhantes" placeholder="Acompanhantes separados por vírgula">
+      <button onclick="adicionarConvidado()">Adicionar</button>
+
+      <h3>Lista de Convidados</h3>
+      <ul id="listaConvidados"></ul>
+
+      <h3>Confirmados</h3>
+      <ul id="confirmados"></ul>
+
+      <button onclick="gerarPDF()">Gerar PDF da Lista</button>
+      <button class="logout-btn" onclick="logout()">Sair</button>
+    </div>
+
+    <div id="guestCard" class="card" style="display:none;">
+      <h2>Confirme sua Presença</h2>
+      <div id="guestInfo"></div>
+      <button onclick="confirmarPresenca()">Confirmar</button>
+      <button class="logout-btn" onclick="logout()">Sair</button>
+    </div>
+  </main>
+
+  <script>
+    const { jsPDF } = window.jspdf;
+    let convidados = JSON.parse(localStorage.getItem("convidados")) || [];
+    let usuarioLogado = null;
+
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      if(params.has("guest")) {
+        const email = params.get("guest");
+        usuarioLogado = email;
+        document.getElementById("loginCard").style.display = "none";
+        document.getElementById("guestCard").style.display = "block";
+        mostrarConvidado(email);
+      }
+    }
+
+    function mostrarLogin() {
+      document.getElementById("loginCard").scrollIntoView({behavior: 'smooth'});
+    }
+
+    function login() {
+      const email = document.getElementById("email").value;
+      usuarioLogado = email;
+      document.getElementById("loginCard").style.display = "none";
+
+      if(email === "noivos@noivos.com") {
+        document.getElementById("authIcon").style.display = "inline";
+        document.getElementById("adminCard").style.display = "block";
+        renderConvidados();
+        renderConfirmados();
+      } else {
+        document.getElementById("guestCard").style.display = "block";
+        mostrarConvidado(email);
+      }
+    }
+
+    function logout() {
+      usuarioLogado = null;
+      document.getElementById("adminCard").style.display = "none";
+      document.getElementById("guestCard").style.display = "none";
+      document.getElementById("loginCard").style.display = "block";
+      document.getElementById("authIcon").style.display = "none";
+      document.getElementById("email").value = "";
+    }
+
+    function adicionarConvidado() {
+      const nome = document.getElementById("nomeConvidado").value;
+      const acompanhantes = document.getElementById("acompanhantes").value.split(",").map(a => a.trim()).filter(a => a);
+      if(nome) {
+        const email = nome.toLowerCase().replace(/\s+/g,"")+"@mail.com";
+        convidados.push({ nome, email, acompanhantes, confirmado: false });
+        localStorage.setItem("convidados", JSON.stringify(convidados));
+        renderConvidados();
+        renderConfirmados();
+      }
+    }
+
+    function renderConvidados() {
+      const lista = document.getElementById("listaConvidados");
+      lista.innerHTML = "";
+      convidados.forEach(c => {
+        const li = document.createElement("li");
+        const link = './index.html?guest=' + encodeURIComponent(c.email);
+        li.innerHTML = `${c.nome} - Acompanhantes: ${c.acompanhantes.join(", ")}<br><a class='link' href='${link}'>${link}</a>`;
+        lista.appendChild(li);
+      });
+    }
+
+    function renderConfirmados() {
+      const lista = document.getElementById("confirmados");
+      lista.innerHTML = "";
+      convidados.forEach(c => {
+        const li = document.createElement("li");
+        if(c.confirmado) {
+          li.innerHTML = `<span class='confirmed'>${c.nome} e ${c.acompanhantesConfirmados ? c.acompanhantesConfirmados.join(", ") : ""} confirmaram presença</span>`;
+        } else {
+          li.innerHTML = `<span class='not-confirmed'>${c.nome} não confirmou</span>`;
+        }
+        lista.appendChild(li);
+      });
+    }
+
+    function mostrarConvidado(email) {
+      const convidado = convidados.find(c => c.email === email);
+      const div = document.getElementById("guestInfo");
+      if(!convidado) {
+        div.innerHTML = "<p>Você não está na lista de convidados.</p>";
+        return;
+      }
+      let html = `<label><input type='checkbox' id='c_${convidado.nome}'> ${convidado.nome}</label><br>`;
+      convidado.acompanhantes.forEach(a => {
+        html += `<label><input type='checkbox' id='c_${a}'> ${a}</label><br>`;
+      });
+      div.innerHTML = html;
+    }
+
+    function confirmarPresenca() {
+      const convidado = convidados.find(c => c.email === usuarioLogado);
+      if(!convidado) return;
+      let confirmado = document.getElementById(`c_${convidado.nome}`).checked;
+      let acompanhantesConfirmados = convidado.acompanhantes.filter(a => document.getElementById(`c_${a}`).checked);
+      convidado.confirmado = confirmado;
+      convidado.acompanhantesConfirmados = acompanhantesConfirmados;
+      localStorage.setItem("convidados", JSON.stringify(convidados));
+      alert("Confirmação registrada!");
+      renderConfirmados();
+    }
+
+    function gerarPDF() {
+      const doc = new jsPDF();
+      doc.setFontSize(18);
+      doc.text("Lista de Confirmados", 14, 20);
+      let y = 30;
+      convidados.forEach(c => {
+        let status = c.confirmado ? 'Confirmado' : 'Não confirmado';
+        let acompanhantes = c.acompanhantesConfirmados ? c.acompanhantesConfirmados.join(", ") : '';
+        doc.setFontSize(12);
+        doc.text(`${c.nome} - Acompanhantes: ${acompanhantes} - ${status}`, 14, y);
+        y += 10;
+      });
+      doc.save('lista_confirmados.pdf');
+    }
+
+
+
+
+
+  </script>
+</body>
+</html>
