@@ -216,7 +216,6 @@ footer .sobre-plataforma {
     padding-left: 18px;
 }
 
-/* Hover effects para os links */
 footer .sobre-nos:hover,
 footer .sobre-plataforma:hover {
     color: #9C60A5;
@@ -235,7 +234,6 @@ footer .sobre-plataforma::before {
     transition: transform 0.3s ease;
 }
 
-/* Seta para baixo quando ativo */
 footer .sobre-nos.active::before,
 footer .sobre-plataforma.active::before {
     content: '▼';
