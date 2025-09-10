@@ -1,0 +1,257 @@
+body {
+    background-color:#FFEEFF; 
+    margin: 0; 
+    min-height: 100vh; 
+    padding-top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color: white;
+    padding: 15px;
+    box-shadow: 0 2px 4px #F7D6F7;
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000; 
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.wedstory {
+    font-size: 40px;
+    font-family: 'Playfair Display', serif;
+    color: #C294C9;
+    padding-left: 4px;
+}
+
+nav ul{
+    margin-right: 25px;
+}
+
+nav li{
+    list-style: none; 
+    display: inline-block;   
+    line-height: 1.5;
+    position: relative;
+}
+
+nav a {
+    text-decoration: none; 
+    color: #9C60A5; 
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    margin-left: 15px;
+    white-space: nowrap; 
+    padding-left: 20px;
+}
+
+nav li:hover a {
+    color: #9C60A5;
+    text-decoration: underline;
+}
+
+nav a:not(.wedstory)::before {
+    content: '▶';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #C294C9;
+    transition: transform 0.3s ease;
+}
+
+nav a:not(.wedstory).active::before {
+    content: '▼';
+    transform: translateY(-50%);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row; /* lado a lado em telas grandes */
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* quebra linha em telas menores */
+}
+
+main .img-app {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+}
+
+main .conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+}
+
+main .btn {
+     margin-bottom: 20px;
+    padding: 14px 40px;
+    font-size: 18px;
+    background-color: #C294C9;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'lato', sans-serif;
+    box-shadow: -3px 6px 2px rgba(239, 136, 239, 0.5);
+    white-space: nowrap;
+
+}
+
+main .btn:hover {
+    background-color:#9C60A5; 
+}
+
+main p{
+    font-family: 'lato', sans-serif;
+    font-size: 22px;
+    color: #6A0D91;
+    line-height: 1.4;
+}
+
+footer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr;
+    grid-template-areas: 
+        "title title title title"
+        "whatsapp-icon whatsapp-text line sobre-nos"
+        "email-icon email-text line sobre-plataforma";
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box;
+    margin-top: auto;
+    padding: 20px 35px;
+    border-bottom: 10px solid #F5F5F5;
+    gap: 5px 10px;
+    font-family: 'lato', sans-serif;
+
+}
+
+footer p{
+    color: #9C60A5;
+    font-size: 38px;
+    margin: 0;
+}
+
+footer p:first-child {
+    grid-area: title;
+    margin-bottom: 15px;
+}
+
+footer .num{
+    grid-area: whatsapp-text;
+    font-size: 18px;
+    margin: 0;
+    color: #C294C9;
+}
+
+footer .email{
+    grid-area: email-text;
+    font-size: 18px;
+    margin: 0;
+    color: #C294C9;
+}
+
+footer img:first-of-type {
+    grid-area: whatsapp-icon;
+    width: 30px;
+    height: auto;
+    margin: 0;
+}
+
+footer img:last-of-type {
+    grid-area: email-icon;
+    width: 30px;
+    height: auto;
+    margin: 0;
+}
+
+.linha-vertical{
+    grid-area: line;
+    border-left: 3px solid #C294C9;
+    height: 80px;
+    justify-self: center;
+}
+
+footer .sobre-nos {
+    grid-area: sobre-nos;
+    font-size: 18px;
+    color: #C294C9;
+    margin: 0;
+    text-decoration: none;
+    margin-left: 22px;
+    position: relative;
+    padding-left: 18px;
+}
+
+footer .sobre-plataforma {
+    grid-area: sobre-plataforma;
+    font-size: 18px;
+    color: #C294C9;
+    margin: 0;
+    text-decoration: none;
+    margin-left: 22px;
+    position: relative;
+    padding-left: 18px;
+}
+
+/* Hover effects para os links */
+footer .sobre-nos:hover,
+footer .sobre-plataforma:hover {
+    color: #9C60A5;
+    text-decoration: underline;
+}
+
+footer .sobre-nos::before,
+footer .sobre-plataforma::before {
+    content: '▶';
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #C294C9;
+    transition: transform 0.3s ease;
+}
+
+/* Seta para baixo quando ativo */
+footer .sobre-nos.active::before,
+footer .sobre-plataforma.active::before {
+    content: '▼';
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; 
+    }
+
+    main .img-app {
+        max-width: 300px;
+    }
+
+    main p {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+}
