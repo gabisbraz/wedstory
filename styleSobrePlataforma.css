@@ -1,0 +1,33 @@
+body.sobre-plataforma-page main.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    padding: 40px;
+    gap: 40px; 
+    flex-wrap: wrap;
+    max-width: 100%; 
+    box-sizing: border-box;
+}
+
+body.sobre-plataforma-page .img-mv{
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    border-radius: 15%;
+    object-fit: cover; 
+    flex-shrink: 0;
+}
+
+body.sobre-plataforma-page .texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; 
+    font-size: 28px;
+    line-height: 1.5;
+    font-family: 'lato', sans-serif;
+    color: #41014B;
+}
+
+
