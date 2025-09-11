@@ -3,14 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Lato", sans-serif; /* Define a fonte padrão para todo o site */
+  font-family: "Lato", sans-serif; 
 }
 
-/* Header */
 header {
-  display: flex; /* Alinha itens em linha */
-  justify-content: space-between; /* Espaço entre logo e links */
-  align-items: center; /* Centraliza verticalmente */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
   padding: 10px 20px;
   background-color: #EEB6FF;
   color: white;
@@ -21,53 +20,49 @@ header {
 .Logo {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 48px; /* Tamanho do logotipo */
+  font-size: 48px; 
 }
 
 header a {
   font-size: 25px;
   color: white;
   text-decoration: none;
-  font-weight: 700; /* Link do perfil */
+  font-weight: 700; 
 }
 
-/* Slider principal */
 .swiper {
   width: 100%;
-  height: calc(100vh - 80px); /* Altura da tela menos o header */
+  height: calc(100vh - 80px); 
   position: relative;
 }
 
 .swiper-wrapper {
   width: 100%;
-  height: 100%; /* Contêiner de slides ocupa toda área do slider */
+  height: 100%; 
 }
 
-/* Cada slide */
 .swiper-slide {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center;     /* Centraliza horizontalmente */
+  justify-content: center; 
+  align-items: center;     
   text-align: center;
   color: white;
-  background-size: cover;   /* Imagem cobre todo o slide */
+  background-size: cover;   
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
 }
 
-/* Título do slide */
 .slide-title {
-  font-size: clamp(24px, 5vw, 55px); /* Responsivo */
+  font-size: clamp(24px, 5vw, 55px); 
   margin-bottom: 20px;
   font-weight: 600;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.4); /* Sombra para contraste */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4); 
 }
 
-/* Botão do slide */
 .slide-button {
   padding: 12px 25px;
   border-radius: 25px;
@@ -75,7 +70,7 @@ header a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease; /* Animação suave ao passar o mouse */
+  transition: 0.3s ease; 
 }
 
 .slide-button:hover {
@@ -83,7 +78,6 @@ header a {
   color: #fff;
 }
 
-/* Navegação (setas) */
 .swiper-button-next,
 .swiper-button-prev {
   color: white;
@@ -93,7 +87,6 @@ header a {
   height: 40px;
 }
 
-/* Paginação (bullets) */
 .swiper-pagination {
   bottom: 20px !important;
 }
@@ -110,10 +103,9 @@ header a {
   opacity: 1;
 }
 
-/* Footer */
 footer {
   width: 100%;
-  display: grid; /* Organiza elementos em grade */
+  display: grid; 
   grid-template-columns: auto 1fr auto 1fr;
   grid-template-areas: 
       "title title title title"

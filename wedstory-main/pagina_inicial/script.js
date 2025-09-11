@@ -1,18 +1,17 @@
-// Array de objetos que define os slides do slider
 const slidesData = [
   {
-    img: "imgs/noivos.jpeg",      // Caminho da imagem
-    alt: "Casal",                 // Texto alternativo da imagem
-    title: "Personalize seu site", // Título que aparece no slide
-    buttonText: "Começar Agora",   // Texto do botão
-    buttonLink: "#"               // Link do botão
+    img: "imgs/noivos.jpeg",      
+    alt: "Casal",                 
+    title: "Personalize seu site", 
+    buttonText: "Começar Agora",   
+    buttonLink: "#"               
   },
   {
     img: "imgs/champagne.jpeg",
     alt: "Champagne",
     title: "Lista de Convidados",
     buttonText: "Começar Agora",
-    buttonLink: "#"
+    buttonLink: "../wedstory-feature-dev/assets/index.html"
   },
   {
     img: "imgs/alianças.jpeg",
@@ -49,14 +48,14 @@ slidesData.forEach(slide => {
 
 // Inicializa o Swiper com configuração personalizada
 const swiper = new Swiper('.swiper', {
-  loop: true, // Permite que os slides fiquem em loop contínuo
-  navigation: { // Define os botões de navegação
+  loop: true, 
+  navigation: { 
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
   pagination: { // Define os bullets de paginação
     el: '.swiper-pagination',
-    clickable: true, // Permite clicar nos bullets
+    clickable: true, 
   },
   autoplay: false, // Desativa a troca automática de slides
 });
