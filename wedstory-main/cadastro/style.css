@@ -1,0 +1,209 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+}
+
+.welcome{
+    background-color: #EEB6FF;
+    color: #fff;
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 115px;
+}
+
+.welcome-title{
+    margin: 0;
+    font-size: 58px;
+    text-align: center;
+}
+
+.cadastro{
+    box-sizing: border-box;
+    width: 60vw;
+    padding: 50px 132px;
+    padding-bottom: 0;
+}
+
+.title{
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;  
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 95px;
+}
+
+.form-field {
+  position: relative;   
+  display: block;
+}
+
+.form-label{
+    font-size: 36px;
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 5px;
+    bottom: 8px;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.form-input{
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    font-size: 25px;
+    width: 100%;
+    padding: 10px 8px;
+}
+
+.form-input::placeholder {
+  color: transparent;
+}
+
+.form-input:focus {
+  border: none; 
+  outline: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-30px);
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.select-buttons{
+    display: flex;
+    width: 102.5%;
+    justify-content: space-between;
+}
+
+.bride-button{
+    display: flex;
+    background-color: #fff;
+    border-radius: 100px;
+    width: 235px;
+    height: 44px;
+    /* color: white; */
+    border: 2px solid;
+    font-size: 28px;
+    gap: 25px;
+    margin-top: 30px; 
+    margin-bottom: 56px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bride-button.selected{
+    background-color: #C294C9;
+    color: white;
+}
+
+.date-label{
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.date{
+    width: 368px;
+    height: 50px;
+    font-size: 36px;
+    border-radius: 100px;
+    padding: 5px 16px;
+    box-sizing: border-box;
+}
+
+.next-button{
+    display: flex;
+    background-color: #C294C9;
+    border-radius: 100px;
+    width: 239px;
+    height: 64px;
+    color: white;
+    border: none;
+    font-size: 36px;
+    gap: 25px;
+    margin: 100px auto 18px auto; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.back-button{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 26px;
+    text-align: center;
+}
+
+.hidden { 
+  display: none !important;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 32px;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.form-checkbox input {
+  display: none; 
+}
+
+.checkmark {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+}
+
+.form-checkbox input:checked + .checkmark {
+  background-color: transparent;
+  border-color: #333;
+}
+
+.form-checkbox input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  width: 12px;
+  height: 18px;
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+#send-button-two{
+    margin-top: 70px;
+}

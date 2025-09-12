@@ -11,7 +11,7 @@ const slidesData = [
     alt: "Champagne",
     title: "Lista de Convidados",
     buttonText: "Começar Agora",
-    buttonLink: "../wedstory-feature-dev/assets/index.html"
+    buttonLink: "../convidados/assets/index.html"
   },
   {
     img: "imgs/alianças.jpeg",
