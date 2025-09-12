@@ -159,6 +159,22 @@ body{
     gap: 60px;
 }
 
+.checkout-button{
+    display: flex;
+    background-color: #C294C9;
+    border-radius: 100px;
+    width: 239px;
+    height: 64px;
+    color: white;
+    border: none;
+    font-size: 36px;
+    gap: 25px;
+    margin: 115px auto 20px auto; 
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
 .form-checkbox {
   display: flex;
   align-items: center;
