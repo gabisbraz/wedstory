@@ -27,11 +27,8 @@
       <div class="card" aria-labelledby="titulo-card">
         <h2 id="titulo-card">Adicionar convidado</h2>
 
-        <label for="familia">Nome da Família (Opcional)</label>
+        <label for="familia">Nome da família</label>
         <input id="familia" type="text" placeholder="Ex: Família Silva" />
-
-        <label for="nome">Nome principal (padrão)</label>
-        <input id="nome" type="text" placeholder="Digite o nome do convidado" />
 
         <!-- ADULTOS -->
         <div class="info">
@@ -41,9 +38,13 @@
         <div class="row">
           <div id="adulto-list" class="nomes-container"></div>
         </div>
-        <button type="button" class="button-row" onclick="adicionarConvidado('adulto')">
-          Adicionar adulto
-        </button>
+        <div class="button-row-container">
+          <button type="button" class="button-row" onclick="adicionarConvidado('adulto')">
+            Adicionar adulto
+          </button>
+        </div>
+
+        <div class="linha-separadora"></div>
 
         <!-- CRIANÇAS -->
         <div class="info">
@@ -53,9 +54,13 @@
         <div class="row">
           <div id="crianca-list" class="nomes-container"></div>
         </div>
-        <button type="button" class="button-row" onclick="adicionarConvidado('crianca')">
-          Adicionar criança
-        </button>
+        <div class="button-row-container">
+          <button type="button" class="button-row" onclick="adicionarConvidado('crianca')">
+            Adicionar criança
+          </button>
+        </div>
+
+        <div class="linha-separadora"></div>
 
         <!-- BEBÊS -->
         <div class="info">
@@ -65,9 +70,11 @@
         <div class="row">
           <div id="bebe-list" class="nomes-container"></div>
         </div>
-        <button type="button" class="button-row" onclick="adicionarConvidado('bebe')">
-          Adicionar bebê
-        </button>
+        <div class="button-row-container">
+          <button type="button" class="button-row" onclick="adicionarConvidado('bebe')">
+            Adicionar bebê
+          </button>
+        </div>
 
         <div class="actions">
           <button class="salvar" id="btnSalvar" aria-label="Salvar convidado">

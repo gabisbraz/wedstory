@@ -36,7 +36,7 @@ function adicionarConvidado(tipo, valor = '') {
 
   const btn = document.createElement('button');
   btn.type = 'button';
-  btn.innerHTML = '❌';
+  btn.innerHTML = '<i class="bi bi-trash"></i>';
   btn.title = 'Remover';
   btn.onclick = () => div.remove();
 
@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const convidado = arr[editing];
     if (convidado) {
       document.getElementById('familia').value = convidado.familia || '';
-      document.getElementById('nome').value = convidado.nome || '';
       preencherConvidados('adulto', convidado.nomesAdultos || []);
       preencherConvidados('crianca', convidado.nomesCriancas || []);
       preencherConvidados('bebe', convidado.nomesBebes || []);
@@ -88,14 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnSalvar?.addEventListener('click', () => {
     const familia = document.getElementById('familia').value.trim();
-    const nome = document.getElementById('nome').value.trim();
 
     const nomesAdultos = coletarNomes('adulto');
     const nomesCriancas = coletarNomes('crianca');
     const nomesBebes = coletarNomes('bebe');
 
-    if (!nome && !familia) {
-      showToast('Preencha pelo menos Nome ou Família.');
+    if (!familia) {
+      showToast('Preencha o nome da família.');
       return;
     }
     if (nomesAdultos.length + nomesCriancas.length + nomesBebes.length === 0) {
@@ -106,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const novo = {
       id: editing !== null ? getGuests()[editing].id : crypto.randomUUID(),
       familia,
-      nome,
       adulto: nomesAdultos.length,
       crianca: nomesCriancas.length,
       bebe: nomesBebes.length,
@@ -129,12 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   btnCancelar?.addEventListener('click', () => {
-    ['familia','nome'].forEach(id => document.getElementById(id).value = '');
+    ['familia'].forEach(id => document.getElementById(id).value = '');
     ['adulto','crianca','bebe'].forEach(tipo => document.getElementById(`${tipo}-list`).innerHTML = '');
     ['adulto','crianca','bebe'].forEach(tipo => adicionarConvidado(tipo));
     showToast('Formulário resetado');
   });
 
   btnVerLista?.addEventListener('click', () => window.location.href='list.html');
-  btnNovo?.addEventListener('click', () => document.getElementById('nome').focus());
 });
