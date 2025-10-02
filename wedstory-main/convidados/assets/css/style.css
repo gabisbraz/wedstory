@@ -142,16 +142,23 @@ main {
 .salvar {
   background-color: #800080;
   color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
   box-shadow: 0 6px 12px rgba(128, 0, 128, 0.08);
 }
 
 .salvar:hover {
   background-color: #a64ca6;
+
 }
 
 .cancelar {
   background-color: #efefef;
   color: #555;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 .cancelar:hover {
@@ -266,5 +273,140 @@ main {
   .view-list {
     padding: 12px 16px;
     font-size: 0.95rem;
+  }
+}
+
+
+
+.guest-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.guest-header {
+  padding: 10px 14px;
+  background: #f7f0f7;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guest-header:hover {
+  background: #f0e0f0;
+}
+
+.guest-detalhes {
+  padding: 10px 14px;
+  border-top: 1px solid #ddd;
+}
+
+.guest-detalhes ul.detalhes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.guest-detalhes li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.presenca {
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.presenca.ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.presenca.pendente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+
+/* Container de cada tipo de convidado */
+.nomes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* espaçamento entre inputs */
+  margin-bottom: 12px;
+}
+
+/* Wrapper de cada input + botão */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* espaçamento entre input e botão */
+}
+
+/* Inputs de nomes */
+.input-wrapper input.input-nome {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.input-wrapper input.input-nome:focus {
+  outline: none;
+  border-color: #6a1b9a; /* cor de destaque ao focar */
+  box-shadow: 0 0 0 2px rgba(106,27,154,0.2);
+}
+
+/* Botão de remover */
+.input-wrapper button {
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.input-wrapper button:hover {
+  background-color: #b71c1c69;
+}
+
+/* Botão de adicionar convidado */
+.button-row {
+  margin-top: 6px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  min-width: 150px;
+  border: none;
+  cursor: pointer;
+  background-color: #6a1b9a;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.button-row:hover {
+  background-color: #4a0072;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 480px) {
+  .input-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-wrapper button {
+    width: 100%;
   }
 }

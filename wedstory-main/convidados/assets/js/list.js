@@ -16,34 +16,79 @@ function renderList() {
     return;
   }
 
-  // mostrar totais e lista
+  // totais
   let totalAdultos = 0, totalCriancas = 0, totalBebes = 0;
+
   const rows = guests.map((g, i) => {
     totalAdultos += Number(g.adulto || 0);
     totalCriancas += Number(g.crianca || 0);
     totalBebes += Number(g.bebe || 0);
 
     const title = g.familia ? `Família ${g.familia}` : (g.nome || '—');
-    const nomeLine = (g.familia && g.nome) ? `<div>Nome: <strong>${g.nome}</strong></div>` : '';
+
+    // monta lista de convidados individuais
+    const convidados = [];
+    (g.nomesAdultos || []).forEach(nome => {
+      if (nome) convidados.push({ nome, tipo: "Adulto", presenca: g.presencas?.[nome] || "Não confirmado" });
+    });
+    (g.nomesCriancas || []).forEach(nome => {
+      if (nome) convidados.push({ nome, tipo: "Criança", presenca: g.presencas?.[nome] || "Não confirmado" });
+    });
+    (g.nomesBebes || []).forEach(nome => {
+      if (nome) convidados.push({ nome, tipo: "Bebê", presenca: g.presencas?.[nome] || "Não confirmado" });
+    });
+
+    const listaDetalhes = convidados.length
+      ? `<ul class="detalhes">
+          ${convidados.map(c => `
+            <li>
+              <span><strong>${c.nome}</strong> — ${c.tipo}</span>
+              <span class="presenca ${c.presenca === 'Confirmado' ? 'ok' : 'pendente'}">
+                ${c.presenca}
+              </span>
+            </li>`).join('')}
+        </ul>`
+      : `<em>Nenhum convidado individual informado.</em>`;
+
     return `
-      <div class="guest-row" data-index="${i}">
-        <div class="guest-info">
-          <div><strong>${title}</strong></div>
-          ${nomeLine}
-          <div>Adultos: ${g.adulto} • Crianças: ${g.crianca} • Bebês: ${g.bebe}</div>
+      <div class="guest-card">
+        <div class="guest-header" onclick="toggleDetalhes(${i})">
+          <span><strong>${title}</strong> 
+            • Adultos ${g.adulto} • Crianças ${g.crianca} • Bebês ${g.bebe}
+          </span>
+          <i class="bi bi-chevron-down"></i>
         </div>
-        <div class="guest-actions">
-          <button class="cancelar" onclick="remover(${i})" title="Remover convidado"><i class="bi bi-trash"></i> Remover</button>
+        <div id="detalhes-${i}" class="guest-detalhes" hidden>
+          ${listaDetalhes}
+          <div class="guest-actions">
+            <button class="salvar" onclick="editar(${i})">
+              <i class="bi bi-pencil"></i> Editar
+            </button>
+            <button class="cancelar" onclick="remover(${i})">
+              <i class="bi bi-trash"></i> Remover
+            </button>
+          </div>
         </div>
       </div>`;
   }).join('');
 
   container.innerHTML = `
     <div style="margin-bottom:12px; color:#3a003a; font-weight:700;">
-      Total convidados: ${guests.length} — Adultos ${totalAdultos} • Crianças ${totalCriancas} • Bebês ${totalBebes}
+      Total famílias: ${guests.length} — Adultos ${totalAdultos} • Crianças ${totalCriancas} • Bebês ${totalBebes}
     </div>
     ${rows}
   `;
+}
+
+function toggleDetalhes(index) {
+  const el = document.getElementById(`detalhes-${index}`);
+  if (el) {
+    el.hidden = !el.hidden;
+  }
+}
+
+function editar(index) {
+  window.location.href = `index.html?edit=${index}`;
 }
 
 function remover(index) {
@@ -59,14 +104,11 @@ function remover(index) {
 document.addEventListener('DOMContentLoaded', () => {
   renderList();
 
-  const btnVoltar = document.getElementById('btnVoltar');
-  const btnLimpar = document.getElementById('btnLimpar');
-
-  btnVoltar && btnVoltar.addEventListener('click', () => {
+  document.getElementById('btnVoltar')?.addEventListener('click', () => {
     window.location.href = 'index.html';
   });
 
-  btnLimpar && btnLimpar.addEventListener('click', () => {
+  document.getElementById('btnLimpar')?.addEventListener('click', () => {
     if (!confirm('Remover todos os convidados?')) return;
     localStorage.removeItem(STORAGE_KEY);
     renderList();
