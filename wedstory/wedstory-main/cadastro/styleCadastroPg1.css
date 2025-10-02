@@ -1,0 +1,176 @@
+body {
+    margin: 0; 
+    display: flex;
+}
+
+header {
+    background-color: #EEB6FF;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    min-height: 150vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 115px;
+}
+
+section {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1 {
+    font-family: "Lato", sans-serif;
+    margin-bottom: 100px;
+}
+
+.input-field {
+    width: 450px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    outline: none;
+    font-size: 25px;
+}
+
+.select-buttons{
+    display: flex;
+    width: 480px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.bride-button{
+    display: flex;
+    background-color: #fff;
+    border-radius: 100px;
+    width: 150px;
+    height: 40px;
+    border: 2px solid;
+    font-size: 20px;
+    margin-top: 20px; 
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.bride-button.selected{
+    background-color: #C294C9;
+    color: white;
+}
+
+.date-label{
+    font-family: "Lato", sans-serif;
+    font-size: 25px;
+}
+
+.date{
+    display: flex;
+    border-radius: 100px;
+    width: 180px;
+    height: 40px;
+    border: 2px solid;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.proximo{
+    background-color: #e6a4fa;
+    border-radius: 35px;
+    color: white;
+    border: none;
+    font-size: 22px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+button img{
+    width: 20px;
+    height: 20px;
+}
+
+
+@media(max-width: 768px){
+    body {
+        flex-direction: column;
+    }
+
+    header {
+        width: 100vw;
+        min-height: 10vh;
+        font-size: 32px;
+        gap: 30px;
+        padding: 20px 0;
+    }
+
+    header img {
+        display: none;
+    }
+
+    section {
+        width: 100vw;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    section h1 {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+
+    .input-field {
+        width: 100%;
+        max-width: 350px;
+        font-size: 18px;
+    }
+
+    .select-buttons {
+        width: 100%;
+        max-width: 350px;
+        gap: 50px;
+        justify-content: space-between;
+
+    }
+
+    .bride-button {
+        width: 130px;
+        height: 40px;
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .date-label {
+        font-size: 20px;
+    }
+
+    .date {
+        width: 160px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .proximo {
+        font-size: 20px;
+        width: 140px;
+        height: 38px;
+    }
+}

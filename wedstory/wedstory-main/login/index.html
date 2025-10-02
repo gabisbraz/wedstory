@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedstory</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <b>
+                Bem-vindo ao 
+                <br>
+                Wedstory
+            </b>
+        </nav>
+        <img src="../assets/coracoes.png">
+    </header>
+
+    <section>
+        <h1>Faça seu Login!</h1>
+        <form>
+            <input type="text" class="input-field" placeholder="Usuário" required>
+            <br><br><br>
+            <fieldset class="password-container">
+                <input type="password" class="input-field" id="senha" placeholder="Senha" required>
+                <span class="toggle-password" onclick="togglePassword()">
+                    <img src="../assets/olho-fechado.png">
+                </span>
+            </fieldset>
+
+            <section class="options">
+                <label>
+                    <input type="checkbox"> Lembrar
+                </label>
+            
+                <a href="#">Esqueci Senha</a>    
+            </section>
+        </form>
+        <br><br><br>
+        <button class="enviar" onclick="window.location.href='../pagina_inicial/index.html';">
+            Enviar
+            <img src="../assets/enviar.png">
+        </button>
+        <br><br>
+        <a class="criarconta" href="#">Criar Conta</a>
+
+    </section>
+
+</body>
+</html>

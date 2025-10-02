@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedstory</title>
+    <link rel="stylesheet" href="styleCadastroPg1.css">
+    <script src="scriptCadastroPg1.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <b>
+                Bem-vindo ao 
+                <br>
+                Wedstory
+            </b>
+        </nav>
+        <img src="../assets/coracoes.png">
+    </header>
+
+    <section>
+        <h1>Crie sua Conta!</h1>
+
+        <form>
+            <input type="text" class="input-field" placeholder="Seu nome" required>
+            <section class="select-buttons" role="radiogroup" aria-label="Par 1" data-name="eu">
+                <button class="bride-button" role="radio" aria-checked="false" data-value="noiva">
+                    <span>Sou a noiva</span>
+                </button>
+                <button class="bride-button" role="radio" aria-checked="false" data-value="noivo">
+                    <span>Sou o noivo</span>
+                </button>
+                <input type="hidden" name="eu" value="">
+            </section>
+            <br>
+            <input type="text" class="input-field" placeholder="Nome do seu amor" required>
+            <section class="select-buttons" role="radiogroup" aria-label="Par 1" data-name="eu">
+                <button class="bride-button" role="radio" aria-checked="false" data-value="noiva">
+                    <span>É minha noiva</span>
+                </button>
+                <button class="bride-button" role="radio" aria-checked="false" data-value="noivo">
+                    <span>É meu noivo</span>
+                </button>
+                <input type="hidden" name="eu" value="">
+            </section>
+            <br><br>
+            <p class="date-label">Data do casamento:</p>
+            <input type="date" id="data" name="data" class="date">
+            <br><br>
+            
+        </form>
+        <button class="proximo" onclick="window.location.href='../cadastro/indexCadastroPg2.html';">
+            Próximo
+            <img src="../assets/enviar.png">
+        </button>
+    </section>
+    
+</body>
+</html>

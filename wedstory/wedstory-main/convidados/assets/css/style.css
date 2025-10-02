@@ -1,0 +1,474 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px;
+  background-color: #EEB6FF;
+  color: white;
+  position: relative;
+  z-index: 10;
+
+}
+
+header h1 a.logo{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 48px; 
+  text-decoration: none !important;
+  color: white;
+}
+
+header a.icone{
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+header a img{
+  width: 40px;
+  height: 40px;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f5f3f7;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Main / Card ===== */
+main {
+  padding: 26px;
+  flex: 1;
+}
+
+.card {
+  max-width: 760px;
+  background: #f0d9ff;
+  border: 2px solid #800080;
+  border-radius: 12px;
+  padding: 26px;
+  margin: 0 auto;
+  box-shadow: 0 6px 18px rgba(128, 0, 128, 0.08);
+}
+
+.card h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: #3a003a;
+}
+
+/* inputs */
+.card label {
+  font-weight: 600;
+  margin-top: 10px;
+  display: block;
+  color: #3a003a;
+}
+
+.card input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #e1d6ea;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.card input[type="text"]:focus {
+  border-color: #800080;
+  outline: none;
+  box-shadow: 0 0 6px rgba(128, 0, 128, 0.12);
+}
+
+/* linhas de contadores */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.divider-line {
+  width: 100%;
+  height: 1px;
+  background:  rgba(0, 0, 0, 0.06);
+  border: none;
+  margin: 12px 0;
+}
+
+/* Seção de cada tipo de convidado */
+.info {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.info span {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #3a003a;
+}
+
+.info small {
+  display: block;
+  color: #666;
+  font-size: 0.85rem;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+/* botões + - */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buttons button {
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: white;
+  border: 2px solid #800080;
+  color: #800080;
+  font-weight: 700;
+  transition: transform .12s ease, background-color .12s;
+}
+
+.buttons button:hover {
+  background-color: #800080;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.buttons span {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ações (salvar/cancelar) */
+.actions {
+  display: flex;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.actions button {
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.salvar {
+  background-color: #800080;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(128, 0, 128, 0.08);
+}
+
+.salvar:hover {
+  background-color: #a64ca6;
+
+}
+
+.cancelar {
+  background-color: #efefef;
+  color: #555;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.cancelar:hover {
+  background-color: #e0e0e0;
+}
+
+/* botões extras (novo, visualizar) */
+.buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  padding-top: 28px;
+}
+
+.new-guest,
+.view-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 40px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.new-guest {
+  background: #d9b3ff;
+  color: #3a003a;
+  border: none;
+}
+
+.new-guest:hover {
+  background: #c285d4;
+  color: #fff;
+}
+
+.view-list {
+  border: 2px solid #d9b3ff;
+  background: #fff;
+  color: #3a003a;
+}
+
+.view-list:hover {
+  background: #d9b3ff;
+  color: #fff;
+}
+
+/* lista (list.html) */
+.lista-container {
+  margin-top: 6px;
+}
+
+.guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  border: 1px solid rgba(128, 0, 128, 0.06);
+}
+
+.guest-info {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.guest-actions button {
+  margin-left: 8px;
+}
+
+/* ações na página de lista */
+.actions-list {
+  margin-top: 16px;
+  justify-content: flex-end;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  background: rgba(56, 2, 56, 0.95);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  z-index: 1200;
+  font-weight: 600;
+}
+
+/* responsivo */
+@media (max-width:720px) {
+  .card {
+    margin: 12px;
+    padding: 18px;
+  }
+
+  header {
+    padding: 14px 18px;
+  }
+
+  .buttons button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .new-guest,
+  .view-list {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+
+
+.guest-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.guest-header {
+  padding: 10px 14px;
+  background: #f7f0f7;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guest-header:hover {
+  background: #f0e0f0;
+}
+
+.guest-detalhes {
+  padding: 10px 14px;
+  border-top: 1px solid #ddd;
+}
+
+.guest-detalhes ul.detalhes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.guest-detalhes li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.presenca {
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.presenca.ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.presenca.pendente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+
+/* Container de cada tipo de convidado */
+.nomes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* Wrapper de cada input + botão */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Inputs de nomes */
+.input-wrapper input.input-nome {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1.5px solid #e1d6ea;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper input.input-nome:focus {
+  outline: none;
+  border-color: #800080;
+  box-shadow: 0 0 6px rgba(128, 0, 128, 0.12);
+}
+
+/* Botão de remover */
+.input-wrapper button {
+  color: #d32f2f;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.2s;
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-wrapper button:hover {
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+/* Botão de adicionar convidado */
+.button-row {
+  margin-top: 0;
+  margin-bottom: 12px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  min-width: 150px;
+  border: none;
+  cursor: pointer;
+  background-color: #800080;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.button-row:hover {
+  background-color: #a64ca6;
+}
+
+/* Ajuste responsivo */
+@media (max-width: 480px) {
+  .input-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-wrapper button {
+    width: 100%;
+  }
+}

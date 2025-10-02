@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedstory</title>
+    <link rel="stylesheet" href="styleCadastroPg2.css">
+    <script src="scriptCadastroPg2.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <b>
+                Bem-vindo ao 
+                <br>
+                Wedstory
+            </b>
+        </nav>
+        <img src="../assets/coracoes.png">
+    </header>
+
+    <section>
+        <h1>Crie sua Conta!</h1>
+        <form>
+            <input type="email" class="input-field" placeholder="E-mail" required>
+            <br><br><br>
+            <input type="text" class="input-field" placeholder="Usuário" required>
+            <br><br><br>
+            <fieldset class="password-container">
+                <input type="password" class="input-field" id="senha" placeholder="Senha" required>
+                <span class="toggle-password" onclick="togglePassword(this, 'senha')">
+                    <img src="../assets/olho-fechado.png" alt="Mostrar senha">
+                </span>
+            </fieldset>
+            <br><br><br>
+            <fieldset class="password-container">
+                <input type="password" class="input-field" id="repetirSenha" placeholder="Repetir Senha" required>
+                <span class="toggle-password" onclick="togglePassword(this, 'repetirSenha')">
+                    <img src="../assets/olho-fechado.png" alt="Mostrar senha">
+                </span>
+            </fieldset>
+
+            <section class="options">
+                <label>
+                    <input type="checkbox"> Lembrar
+                </label>
+            
+                <a href="#">Esqueci Senha</a>    
+            </section>
+        </form>
+        <br><br><br>
+        <button class="enviar" onclick="window.location.href='../pagina_inicial/index.html';">
+            Enviar
+            <img src="../assets/enviar.png">
+        </button>
+    </section>
+
+</body>
+</html>

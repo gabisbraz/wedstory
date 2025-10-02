@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 20px;
+  background-color: #EEB6FF;
+  color: white;
+  position: relative;
+  z-index: 10;
+
+}
+
+header h1 a.logo{
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 48px; 
+  text-decoration: none !important;
+  color: white;
+}
+
+header a.icone{
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+header a img{
+  width: 40px;
+  height: 40px;
+}
+
+.swiper {
+  width: 100%;
+  height: calc(100vh - 80px); 
+  position: relative;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%; 
+}
+
+.swiper-slide {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;
+  color: white;
+  background-size: cover;   
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.slide-title {
+  font-size: clamp(24px, 5vw, 55px); 
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4); 
+}
+
+.slide-button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: #9C60A5;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease; 
+}
+
+.slide-button:hover {
+  background-color: #EEB6FF;
+  color: #fff;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-pagination {
+  bottom: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #9C60A5;
+  opacity: 1;
+}
+
+footer {
+  width: 100%;
+  display: grid; 
+  grid-template-columns: auto 1fr auto 1fr;
+  grid-template-areas: 
+      "title title title title"
+      "whatsapp-icon whatsapp-text line sobre-nos"
+      "email-icon email-text line sobre-plataforma";
+  grid-template-rows: auto; 
+  height: auto;
+  align-items: center;
+  background-color: #EEB6FF;
+  color: white;
+  padding: 20px 35px;
+  gap: 5px 10px;
+  font-family: 'Lato', sans-serif;
+}
+
+footer p {
+  font-size: 38px;
+  margin: 0;
+}
+
+footer p:first-child { 
+  grid-area: title; 
+  margin-bottom: 15px;
+}
+
+footer .num {
+   grid-area: whatsapp-text; 
+   font-size: 18px; 
+}
+
+footer .email { 
+  grid-area: email-text; 
+  font-size: 18px; 
+  color: white; 
+}
+
+footer img:first-of-type { 
+  grid-area: whatsapp-icon;
+  width: 30px; 
+  height: auto; 
+}
+
+footer img:last-of-type { 
+  grid-area: email-icon; 
+  width: 30px; 
+  height: auto; 
+}
+
+.linha-vertical { 
+  grid-area: line; 
+  border-left: 3px solid white; 
+  height: 80px; 
+  justify-self: center; 
+}
+
+footer .sobre-nos { 
+  grid-area: sobre-nos;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 22px;
+  position: relative;
+  padding-left: 18px;
+  color: white; 
+}
+
+footer .sobre-plataforma { 
+  grid-area: sobre-plataforma;
+  font-size: 18px;
+  text-decoration: none;
+  margin-left: 22px;
+  position: relative;
+  padding-left: 18px;
+  color: white; 
+}
+
+footer .sobre-nos:hover,
+footer .sobre-plataforma:hover {
+  text-decoration: underline;
+}
+
+footer .sobre-nos::before,
+footer .sobre-plataforma::before {
+  content: '▶';
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  transition: transform 0.3s ease;
+  color: white; 
+}
+
+footer .sobre-nos.active::before,
+footer .sobre-plataforma.active::before {
+  content: '▼';
+}
+
+/* Media queries para responsividade */
+
+/* Mobile pequeno (até 480px) */
+@media screen and (max-width: 480px) {
+  .swiper { height: calc(100vh - 60px); } 
+  .slide-title { font-size: clamp(20px, 8vw, 40px); }
+  .slide-button { padding: 10px 20px; font-size: 14px; }
+  .swiper-button-next, .swiper-button-prev { width: 30px; height: 30px; }
+  .swiper-pagination-bullet { width: 10px; height: 10px; }
+}
+
+/* Mobile médio / tablets (481px a 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .swiper { height: calc(100vh - 70px); }
+  .slide-title { font-size: clamp(28px, 9vw, 48px); }
+  .slide-button { padding: 12px 22px; font-size: 15px; }
+  .swiper-button-next, .swiper-button-prev { width: 35px; height: 35px; }
+  footer {
+    display: flex;                 
+    flex-direction: column;        
+    align-items: center;           
+    text-align: center;
+    padding: 20px;
+    gap: 15px;                     
+    grid-template-columns: none;   
+    grid-template-areas: none;
+  }
+
+  footer p:first-child {
+    font-size: 28px;               
+    margin-bottom: 10px;
+  }
+
+  footer .num,
+  footer .email,
+  footer .sobre-nos,
+  footer .sobre-plataforma {
+    margin: 0;
+    padding-left: 0;               
+    font-size: 16px;               
+  }
+
+  footer .linha-vertical {
+    display: none;                 
+  }
+
+  footer img {
+    width: 30px;
+    height: auto;
+    margin: 5px 0;                 
+  }
+
+  footer .sobre-nos::before,
+  footer .sobre-plataforma::before {
+    left: -18px;                  
+  }
+}
+
+/* Laptops e desktops pequenos (769px a 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .swiper { height: calc(100vh - 80px); }
+  .slide-title { font-size: clamp(24px, 4vw, 50px); }
+  .slide-button { padding: 12px 25px; font-size: 16px; }
+  .swiper-button-next, .swiper-button-prev { width: 40px; height: 40px; }
+}
+
+/* Grandes telas (maiores que 1024px) */
+@media screen and (min-width: 1025px) {
+  .swiper { height: calc(100vh - 80px); }
+  .slide-title { font-size: 55px; }
+  .slide-button { padding: 12px 30px; font-size: 18px; }
+  .swiper-button-next, .swiper-button-prev { width: 50px; height: 50px; }
+}

@@ -1,0 +1,199 @@
+body {
+    margin: 0; 
+    display: flex;
+}
+
+header {
+    background-color: #EEB6FF;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 115px;
+}
+
+section {
+    /*box-sizing: border-box;*/
+    width: 70vw;
+    /*padding: 150px 132px;
+    padding-bottom: 0;
+    font-family: "Lato", sans-serif; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*text-align: center;*/
+}
+
+section h1 {
+    font-family: "Lato", sans-serif;
+    margin-bottom: 100px;
+}
+
+.input-field {
+    width: 450px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #aaa;
+    outline: none;
+    font-size: 25px;
+}
+
+.password-container {
+    position: relative;
+    border: none; 
+    padding: 0;
+    margin: 0;
+    width: 450px;
+}
+
+
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;    
+}
+
+.toggle-password img {
+    width: 25px;   
+    height: auto;  
+}
+
+.options {
+    width: 450px;                /* mesma largura do input-field */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* separa "Lembrar" e "Esqueci Senha" */
+    align-items: center;
+    font-size: 18px;
+    margin-top: 18px;              /* encosta logo abaixo da linha da senha */
+    font-family: "Lato", sans-serif;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.options input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+.options a {
+    text-decoration: none;
+    color: #333;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #EEB6FF;
+    border-radius: 35px;
+    color: white;
+    border: none;
+    font-size: 22px;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+button img{
+    width: 20px;
+    height: 20px;
+}
+
+.criarconta{
+    text-decoration: none;
+    color: rgb(103, 102, 102);
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+}
+
+@media(max-width: 768px){
+    body {
+        flex-direction: column;
+    }
+
+    header {
+        width: 100vw;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        font-size: 32px;
+    }
+
+    header img {
+        display: none;
+    }
+
+    section {
+        width: 100vw;
+        padding: 40px 20px;
+    }
+
+    section h1 {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .input-field {
+        width: 90%;
+        max-width: 450px;
+        font-size: 18px;
+    }
+
+    .password-container {
+        width: 85%;
+        max-width: 280px;
+        
+    }
+
+    .password-container .input-field {
+        width: 85vw;
+        max-width: 280px;
+    }
+
+    .options {
+        width: 90%;
+        max-width: 300px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .options input[type="checkbox"] {
+        width: 14px;
+        height: 14px;
+    }
+
+    button {
+        width: 130px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .criarconta {
+        font-size: 18px;
+    }
+}
