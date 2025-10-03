@@ -1,51 +1,16 @@
+/* ===== Reset e Base ===== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html,
-body {
+html, body {
   height: 100%;
 }
 
-header {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px 20px;
-  background-color: #EEB6FF;
-  color: white;
-  position: relative;
-  z-index: 10;
-
-}
-
-header h1 a.logo{
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  font-size: 48px; 
-  text-decoration: none !important;
-  color: white;
-}
-
-header a.icone{
-  font-size: 25px;
-  color: white;
-  text-decoration: none;
-  font-family: 'Lato', sans-serif;
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-}
-
-header a img{
-  width: 40px;
-  height: 40px;
-}
-
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: #f5f3f7;
   color: #333;
   display: flex;
@@ -69,13 +34,13 @@ main {
 }
 
 .card h2 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   margin-bottom: 14px;
   color: #3a003a;
 }
 
-/* inputs */
+/* ===== Inputs ===== */
 .card label {
   font-weight: 600;
   margin-top: 10px;
@@ -83,63 +48,69 @@ main {
   color: #3a003a;
 }
 
-.card input[type="text"] {
+.card input[type="text"],
+.input-wrapper input.input-nome {
   width: 100%;
-  padding: 12px;
-  border: 1.5px solid #e1d6ea;
-  border-radius: 10px;
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
   font-size: 1rem;
   background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.card input[type="text"]:focus {
-  border-color: #800080;
+.card input[type="text"]:focus,
+.input-wrapper input.input-nome:focus {
+  border-color: #6a1b9a;
   outline: none;
-  box-shadow: 0 0 6px rgba(128, 0, 128, 0.12);
+  box-shadow: 0 0 0 2px rgba(106,27,154,0.2);
 }
 
-/* linhas de contadores */
+/* ===== Linhas de contadores ===== */
 .row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .row:last-child {
   border-bottom: none;
 }
 
-.divider-line {
-  width: 100%;
-  height: 1px;
-  background:  rgba(0, 0, 0, 0.06);
-  border: none;
-  margin: 12px 0;
-}
-
-/* Seção de cada tipo de convidado */
 .info {
-  margin-top: 24px;
-  margin-bottom: 16px;
+  margin-top: 15px;
 }
 
 .info span {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #3a003a;
 }
 
 .info small {
   display: block;
-  color: #666;
+  color: #555;
   font-size: 0.85rem;
-  margin-top: 2px;
-  margin-bottom: 8px;
 }
 
-/* botões + - */
+.linha-separadora {
+  margin-bottom: 15px;
+  margin-top: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Botões (+/- genéricos) ===== */
+button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.12s ease;
+  
+}
+
+/* Botões circulares */
 .buttons {
   display: flex;
   align-items: center;
@@ -147,21 +118,17 @@ main {
 }
 
 .buttons button {
-  border: none;
+  border: 2px solid #800080;
   border-radius: 50%;
   width: 42px;
   height: 42px;
-  font-size: 20px;
-  cursor: pointer;
-  background-color: white;
-  border: 2px solid #800080;
+  background: #fff;
   color: #800080;
-  font-weight: 700;
-  transition: transform .12s ease, background-color .12s;
+  font-size: 20px;
 }
 
 .buttons button:hover {
-  background-color: #800080;
+  background: #800080;
   color: #fff;
   transform: translateY(-2px);
 }
@@ -173,7 +140,7 @@ main {
   font-size: 1rem;
 }
 
-/* ações (salvar/cancelar) */
+/* ===== Ações (Salvar/Cancelar) ===== */
 .actions {
   display: flex;
   gap: 12px;
@@ -181,41 +148,43 @@ main {
 }
 
 .actions button {
+  flex: 1;
   padding: 11px 16px;
   border-radius: 10px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
   font-size: 0.95rem;
+  border: none;
 }
 
 .salvar {
-  background-color: #800080;
+  background: #800080;
   color: #fff;
+  box-shadow: 0 6px 12px rgba(128, 0, 128, 0.08);
   border: none;
   padding: 8px;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(128, 0, 128, 0.08);
+
 }
 
 .salvar:hover {
-  background-color: #a64ca6;
-
+  background: #a64ca6;
 }
 
 .cancelar {
-  background-color: #efefef;
+  background: #efefef;
   color: #555;
   border: none;
   padding: 8px;
   border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(128, 0, 128, 0.08);
+
 }
 
 .cancelar:hover {
-  background-color: #e0e0e0;
+  background: #e0e0e0;
 }
 
-/* botões extras (novo, visualizar) */
+/* ===== Botões extras ===== */
 .buttons-row {
   display: flex;
   justify-content: center;
@@ -231,7 +200,6 @@ main {
   padding: 14px 22px;
   border-radius: 40px;
   font-weight: 700;
-  cursor: pointer;
   font-size: 1rem;
 }
 
@@ -257,7 +225,7 @@ main {
   color: #fff;
 }
 
-/* lista (list.html) */
+/* ===== Lista (list.html) ===== */
 .lista-container {
   margin-top: 6px;
 }
@@ -283,57 +251,13 @@ main {
   margin-left: 8px;
 }
 
-/* ações na página de lista */
-.actions-list {
-  margin-top: 16px;
-  justify-content: flex-end;
-}
-
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 28px;
-  transform: translateX(-50%);
-  background: rgba(56, 2, 56, 0.95);
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-  z-index: 1200;
-  font-weight: 600;
-}
-
-/* responsivo */
-@media (max-width:720px) {
-  .card {
-    margin: 12px;
-    padding: 18px;
-  }
-
-  header {
-    padding: 14px 18px;
-  }
-
-  .buttons button {
-    width: 38px;
-    height: 38px;
-  }
-
-  .new-guest,
-  .view-list {
-    padding: 12px 16px;
-    font-size: 0.95rem;
-  }
-}
-
-
-
+/* ===== Cartão expandível ===== */
 .guest-card {
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-bottom: 12px;
-  overflow: hidden;
   background: #fff;
+  overflow: hidden;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -355,10 +279,10 @@ main {
   border-top: 1px solid #ddd;
 }
 
-.guest-detalhes ul.detalhes {
+.guest-detalhes ul {
   list-style: none;
+  margin: 0 0 8px;
   padding: 0;
-  margin: 0 0 8px 0;
 }
 
 .guest-detalhes li {
@@ -368,6 +292,7 @@ main {
   border-bottom: 1px dashed #eee;
 }
 
+/* Presença */
 .presenca {
   font-size: 0.9em;
   padding: 2px 6px;
@@ -384,85 +309,90 @@ main {
   color: #856404;
 }
 
-
-/* Container de cada tipo de convidado */
+/* ===== Inputs Dinâmicos ===== */
 .nomes-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 0;
-  margin-top: 0;
+  flex: 1;
+  margin-bottom: 12px;
 }
 
-/* Wrapper de cada input + botão */
 .input-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-/* Inputs de nomes */
-.input-wrapper input.input-nome {
-  flex: 1;
-  padding: 10px 12px;
-  border: 1.5px solid #e1d6ea;
-  border-radius: 8px;
-  font-size: 15px;
-  background: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.input-wrapper input.input-nome:focus {
-  outline: none;
-  border-color: #800080;
-  box-shadow: 0 0 6px rgba(128, 0, 128, 0.12);
-}
-
-/* Botão de remover */
 .input-wrapper button {
-  color: #d32f2f;
-  background: transparent;
+  padding: 10px;
   border: none;
   border-radius: 6px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 700;
-  transition: all 0.2s;
-  min-width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #b71c1c;
+  color: #fff;
+  font-size: 14px;
 }
 
 .input-wrapper button:hover {
-  background-color: #ffebee;
-  color: #b71c1c;
+  background: #8a1212;
 }
 
-/* Botão de adicionar convidado */
+.button-row-container {
+  display: flex;
+}
+
+/* Botão adicionar */
 .button-row {
-  margin-top: 0;
-  margin-bottom: 12px;
-  padding: 10px 18px;
+  margin-top: 6px;
+  padding: 8px 12px;
   font-size: 14px;
-  font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
   min-width: 150px;
   border: none;
-  cursor: pointer;
-  background-color: #800080;
+  background: #6a1b9a;
   color: #fff;
-  transition: background-color 0.2s;
+  flex: 1;
 }
 
 .button-row:hover {
-  background-color: #a64ca6;
+  background: #4a0072;
 }
 
-/* Ajuste responsivo */
-@media (max-width: 480px) {
+/* ===== Toast ===== */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  background: rgba(56, 2, 56, 0.95);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  z-index: 1200;
+  font-weight: 600;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width:720px) {
+  .card {
+    margin: 12px;
+    padding: 18px;
+  }
+
+  .buttons button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .new-guest,
+  .view-list {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width:480px) {
   .input-wrapper {
     flex-direction: column;
     align-items: stretch;

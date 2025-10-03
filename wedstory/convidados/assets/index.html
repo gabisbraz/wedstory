@@ -25,76 +25,84 @@
     </header>
 
     <main>
-      <section class="card" aria-labelledby="titulo-card">
+      <div class="card" aria-labelledby="titulo-card">
         <h2 id="titulo-card">Adicionar convidado</h2>
 
-        <label for="familia">Nome da Família (Opcional)</label>
+        <label for="familia">Nome da família</label>
         <input id="familia" type="text" placeholder="Ex: Família Silva" />
-        <br><br>
-        <label for="nome">Nome principal (padrão)</label>
-        <input id="nome" type="text" placeholder="Digite o nome do convidado" />
-        
-        <hr class="divider-line">
 
         <!-- ADULTOS -->
-        <section class="info">
+        <div class="info">
           <span>Adulto</span>
           <small>Faixa etária: acima de 8 anos</small>
-        </section>
+        </div>
+        <div class="row">
+          <div id="adulto-list" class="nomes-container"></div>
+        </div>
+        <div class="button-row-container">
+          <button type="button" class="button-row" onclick="adicionarConvidado('adulto')">
+            Adicionar adulto
+          </button>
+        </div>
 
-        <button type="button" class="button-row" onclick="adicionarConvidado('adulto')">
-          Adicionar adulto
-        </button>
-
-        <section class="row">
-          <section id="adulto-list" class="nomes-container"></section>
-        </section>
+        <div class="linha-separadora"></div>
 
         <!-- CRIANÇAS -->
-        <section class="info">
+        <div class="info">
           <span>Criança</span>
           <small>Faixa etária: entre 3 e 7 anos</small>
-        </section>
+        </div>
+        <div class="row">
+          <div id="crianca-list" class="nomes-container"></div>
+        </div>
+        <div class="button-row-container">
+          <button type="button" class="button-row" onclick="adicionarConvidado('crianca')">
+            Adicionar criança
+          </button>
+        </div>
 
-        <button type="button" class="button-row" onclick="adicionarConvidado('crianca')">
-          Adicionar criança
-        </button>
-
-        <section class="row">
-          <section id="crianca-list" class="nomes-container"></section>
-        </section>
+        <div class="linha-separadora"></div>
 
         <!-- BEBÊS -->
-        <section class="info">
+        <div class="info">
           <span>Bebê</span>
           <small>Faixa etária: entre 0 e 2 anos</small>
-        </section>
+        </div>
+        <div class="row">
+          <div id="bebe-list" class="nomes-container"></div>
+        </div>
+        <div class="button-row-container">
+          <button type="button" class="button-row" onclick="adicionarConvidado('bebe')">
+            Adicionar bebê
+          </button>
+        </div>
 
-        <button type="button" class="button-row" onclick="adicionarConvidado('bebe')">
-          Adicionar bebê
-        </button>
+        <div class="actions">
+          <button class="salvar" id="btnSalvar" aria-label="Salvar convidado">
+            Salvar
+          </button>
+          <button class="cancelar" id="btnCancelar" aria-label="Cancelar">
+            Cancelar
+          </button>
+        </div>
+      </div>
 
-        <section class="row">
-          <section id="bebe-list" class="nomes-container"></section>
-        </section>
-      </section>
-
-      <section class="buttons-row">
+      <div class="buttons-row">
         <button class="new-guest" id="btnNovo">
           <i class="bi bi-plus-circle"></i> Novo convidado
         </button>
         <button class="view-list" id="btnVerLista">
           <i class="bi bi-eye"></i> Visualizar lista
         </button>
-      </section>
+      </div>
 
-      <section
+      <div
         id="toast"
         class="toast"
         role="status"
         aria-live="polite"
         hidden
-      ></section>
+      ></div>
     </main>
 
     <footer>
@@ -108,10 +116,14 @@
       <img src="../../assets/mail.png" alt="Ícone do Gmail" class="icon" />
       <p class="email">gi.ribeirodefrancisco@gmail.com</p>
       <section class="linha-vertical"></section>
-      <a href="../../sobre-nos/indexSobreNos.html" class="sobre-nos">Sobre Nós</a>
-      
-      <a href="../../sobre-plataforma/indexSobrePlataforma.html" class="sobre-plataforma">Sobre a Plataforma</a>
-        
+      <a href="../../sobre-nos/indexSobreNos.html" class="sobre-nos"
+        >Sobre Nós</a
+      >
+      <a
+        href="../../sobre-plataforma/indexSobrePlataforma.html"
+        class="sobre-plataforma"
+        >Sobre a plataforma</a
+      >
     </footer>
 
     <script src="js/script.js"></script>
