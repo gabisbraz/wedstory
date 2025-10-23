@@ -22,14 +22,14 @@ const slidesData = [
     alt: "Champagne",
     title: "Lista de Convidados",
     buttonText: "Começar Agora",
-    buttonLink: "/convidados", 
+    buttonLink: "/wedstory/convidados/lista", 
   },
   {
     img: "/assets/aliancas.jpeg", 
     alt: "Alianças",
     title: "Lista de Presentes",
     buttonText: "Começar Agora",
-    buttonLink: "/lista-de-presentes", 
+    buttonLink: "/wedstory/presentes", 
   },
 ];
 
