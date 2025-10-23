@@ -218,6 +218,11 @@ export default function ConvidadosNovoPage() {
         </div>
       </div>
 
+      <Link href="/wedstory/convidados/import-excel" className={styles.importarLink}>
+        📥 Importar convidados via Excel
+      </Link>
+
+
       <div className={styles.buttonsRow}>
         <Link href="/wedstory/convidados/novo" className={styles.newGuest}>Novo convidado</Link>
         <Link href="/wedstory/convidados/lista" className={styles.viewList}>Visualizar lista</Link>
