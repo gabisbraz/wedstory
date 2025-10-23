@@ -1,156 +1,53 @@
-/* * { margin: 0; padding: 0; box-sizing: border-box; } */
-
-/* HEADER */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #EEB6FF;
-  color: white;
-  position: relative;
-  z-index: 10;
+.swiperRoot { 
+  height: calc(100vh - 80px);
 }
 
-.logo {
-  font-family: 'Playfair Display', serif;
+:global(.swiper), :global(.swiper-wrapper), :global(.swiper-slide) { height: 100%; }
+
+.bgWrap { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.bgImage { object-fit: cover; }
+
+.swiperSlide {
+  position: relative;
+  height: 100%;
+}
+
+.contentCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;      
+  justify-content: center;   
+  flex-direction: column;
+  gap: 16px;
+  z-index: 2;               
+  text-align: center;
+  padding: 0 24px;           
+}
+
+.slideTitle {
+  margin: 0;
   font-weight: 700;
-  font-size: 48px;
-  text-decoration: none !important;
-  color: white;
-}
-
-.icone {
-  font-size: 25px;
-  color: white;
-  text-decoration: none;
-  font-family: 'Lato', sans-serif;
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-}
-
-.perfil { width: 40px; height: 40px; }
-
-.swiper { width: 100%; height: calc(100vh - 80px); position: relative; }
-.swiperSlide {
-  position: relative;            /* importante para o fill */
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: center;
-  text-align: center; color: white;
-}
-.bgWrap { position: absolute; inset: 0; z-index: 0; } /* onde o Image fill fica */
-.slideTitle, .slideButton { position: relative; z-index: 1; } /* acima da imagem */
-
-
-.swiperSlide {
-  width: 100%; height: 100%;
-  display: flex; flex-direction: column;
-  justify-content: center; align-items: center;
-  text-align: center; color: white;
-  position: relative;
-}
-
-/* .slideTitle {
   font-size: clamp(24px, 5vw, 55px);
-  margin-bottom: 20px;
-  font-weight: 600;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,.4);
 }
 
 .slideButton {
   padding: 12px 25px;
   border-radius: 25px;
   background: #9C60A5;
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s ease;
-} */
-
-.slideButton:hover { background-color: #EEB6FF; color: #fff; }
-
-/* FOOTER */
-.footer {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto 1fr auto 1fr;
-  grid-template-areas:
-    "title title title title"
-    "whatsapp-icon whatsapp-text line sobre-nos"
-    "email-icon email-text line sobre-plataforma";
-  grid-template-rows: auto;
-  height: auto;
-  align-items: center;
-  background-color: #EEB6FF;
-  color: white;
-  padding: 20px 35px;
-  gap: 5px 10px;
-  font-family: 'Lato', sans-serif;
+  transition: .3s ease;
 }
+.slideButton:hover { background-color: #EEB6FF; }
 
-.footer p { font-size: 38px; margin: 0; }
-.footer p:first-child { grid-area: title; margin-bottom: 15px; }
+:global(.swiper-button-next),
+:global(.swiper-button-prev),
+:global(.swiper-pagination) { z-index: 3; }
 
-.num { grid-area: whatsapp-text; font-size: 18px; }
-.email { grid-area: email-text; font-size: 18px; color: white; }
-
-.linhaVertical { grid-area: line; border-left: 3px solid white; height: 80px; justify-self: center; }
-
-.sobreNos {
-  grid-area: sobre-nos;
-  font-size: 18px; text-decoration: none; margin-left: 22px;
-  position: relative; padding-left: 18px; color: white;
-}
-
-.sobrePlataforma {
-  grid-area: sobre-plataforma;
-  font-size: 18px; text-decoration: none; margin-left: 22px;
-  position: relative; padding-left: 18px; color: white;
-}
-
-.sobreNos:hover, .sobrePlataforma:hover { text-decoration: underline; }
-
-.sobreNos::before, .sobrePlataforma::before {
-  content: '▶'; position: absolute; left: 2px; top: 50%;
-  transform: translateY(-50%); font-size: 10px; transition: transform .3s ease; color: white;
-}
-
-.sobreNos.active::before, .sobrePlataforma.active::before { content: '▼'; }
-
-/* RESPONSIVO */
-@media screen and (max-width: 480px) {
-  .swiper { height: calc(100vh - 60px); }
-  .slideTitle { font-size: clamp(20px, 8vw, 40px); }
-  .slideButton { padding: 10px 20px; font-size: 14px; }
-}
-
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .swiper { height: calc(100vh - 70px); }
-  .slideTitle { font-size: clamp(28px, 9vw, 48px); }
-  .slideButton { padding: 12px 22px; font-size: 15px; }
-
-  .footer {
-    display: flex; flex-direction: column; align-items: center;
-    text-align: center; padding: 20px; gap: 15px;
-    grid-template-columns: none; grid-template-areas: none;
-  }
-
-  .footer p:first-child { font-size: 28px; margin-bottom: 10px; }
-
-  .num, .email, .sobreNos, .sobrePlataforma { margin: 0; padding-left: 0; font-size: 16px; }
-  .linhaVertical { display: none; }
-}
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .swiper { height: calc(100vh - 80px); }
-  .slideTitle { font-size: clamp(24px, 4vw, 50px); }
-  .slideButton { padding: 12px 25px; font-size: 16px; }
-}
-
-@media screen and (min-width: 1025px) {
-  .swiper { height: calc(100vh - 80px); }
-  .slideTitle { font-size: 55px; }
-  .slideButton { padding: 12px 30px; font-size: 18px; }
+@media (max-width: 480px) {
+  .swiperRoot { height: calc(100vh - 60px); }
 }
