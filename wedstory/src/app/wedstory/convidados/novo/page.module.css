@@ -1,0 +1,52 @@
+.page { display: flex; flex-direction: column; gap: 16px; padding: 24px; }
+
+.card {
+  background: #fff; border-radius: 12px; padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08); max-width: 960px; margin: 0 auto; width: 100%;
+}
+.card h2 { font-family: 'Playfair Display', serif; color: #6A0D91; margin-bottom: 16px; }
+
+.label { display: block; margin: 12px 0 6px; color: #6A0D91; }
+.input {
+  width: 100%; max-width: 420px; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px;
+  background: #faf7fb;
+}
+
+.info { display: flex; flex-direction: column; margin-top: 18px; color: #6A0D91; gap: 4px; }
+.info small { color: #7c6b87; }
+
+.row { margin-top: 8px; }
+.nomesContainer { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.nomeItem { display: flex; gap: 6px; align-items: center; }
+.nomeItem input {
+  flex: 1; padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px; background: #fff;
+}
+.nomeItem button {
+  border: none; background: #ffe2f7; color: #a01274; border-radius: 8px; width: 34px; height: 34px; cursor: pointer;
+}
+
+.buttonRowContainer { margin-top: 10px; }
+.buttonRow {
+  background: #C294C9; color: #fff; border: none; border-radius: 999px; padding: 8px 14px; cursor: pointer;
+}
+
+.linhaSeparadora { border-top: 1px solid #eee; margin: 20px 0; }
+
+.actions { display: flex; gap: 12px; margin-top: 16px; }
+.salvar, .cancelar {
+  border: none; border-radius: 999px; padding: 10px 16px; cursor: pointer; font-weight: 600;
+}
+.salvar { background: #8c31a8; color: #fff; }
+.cancelar { background: #ecbefa; color: #fff; }
+
+.buttonsRow {
+  display: flex; gap: 12px; justify-content: center; margin: 6px 0 0;
+}
+.newGuest, .viewList {
+  text-decoration: none; background: #9C60A5; color: #fff; border-radius: 999px; padding: 10px 14px;
+}
+
+.toast {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: #41014B; color: #fff; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,.2);
+}

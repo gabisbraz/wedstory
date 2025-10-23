@@ -1,0 +1,21 @@
+.sectionMain {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 16px;
+  padding: 24px;
+}
+
+/* Card “+ Adicionar” (estático por enquanto) */
+.addCard {
+  border: 2px dashed #C294C9;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px 12px;
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #6A0D91;
+  cursor: pointer;
+}
+.plus { font-size: 40px; line-height: 1; display: block; }
