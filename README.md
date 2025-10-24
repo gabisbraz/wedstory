@@ -8,11 +8,8 @@ A migração permite **componentização, reatividade e manutenibilidade**, alé
 ## Diferenciais
 
 - Simplicidade de uso para os noivos.
-
 - Layouts prontos e personalizáveis.
-
 - Flexibilidade na criação de listas de presentes e convidados.
-
 - Organização prática para um dos momentos mais importantes da vida do casal.
 
  
