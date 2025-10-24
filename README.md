@@ -1,32 +1,11 @@
-<h2>💍 Wedstory</h2>
+# Wedstory – Etapa Borboleta (Next.js + React)
 
-O Wedstory é um site de casamento criado para que os noivos possam se cadastrar e ter seu próprio espaço personalizado na web. A ideia é transformar a organização do casamento em uma experiência prática, bonita e memorável, permitindo que os noivos compartilhem cada detalhe com seus convidados.
+O **Wedstory** é um site de casamento criado inicialmente em **Vanilla JS** (Projeto 1 – Etapa Lagarta). Nesta segunda fase (**Etapa Borboleta**), o projeto foi migrado para uma **arquitetura baseada em componentes com React**, utilizando **Next.js** como framework.
 
-<h2>✨ Funcionalidades</h2>
+A migração permite **componentização, reatividade e manutenibilidade**, além de preparar o projeto para integração com APIs e rotas dinâmicas.
 
-- **Personalizar Layout**  
-  Os noivos podem escolher entre diferentes layouts pré-definidos, deixando o site com a identidade visual que mais combina com o casal.
 
-- **Lista de Convidados**  
-  Possibilidade de importar uma lista já pronta no Excel ou criar manualmente dentro da plataforma, garantindo um controle simples e centralizado dos convidados.
-
-- **Lista de Presentes**  
-  Opção de escolher presentes já disponíveis no site ou criar presentes personalizados, adicionando itens únicos e especiais para a lista do casal.
-
- <h2>🐛 Etapa Lagarta do Projeto</h2> 
-
-O desenvolvimento do Wedstory está sendo organizado por etapas de evolução.<br>
-Na **etapa Lagarta**, o foco está em:
-
-- **Lista de Convidados:** permitir que os noivos importem ou criem a lista manualmente.
-
-- **Lista de Presentes:** possibilitar a seleção de presentes disponíveis ou a criação de presentes personalizados.
-
-<h2>🎯 Objetivo</h2>
-
-O Wedstory busca oferecer uma solução completa e intuitiva para casais que desejam um site de casamento moderno, bonito e funcional, sem complicações técnicas.
-
-<h2>🌟 Diferenciais</h2>
+## Diferenciais
 
 - Simplicidade de uso para os noivos.
 
@@ -36,15 +15,125 @@ O Wedstory busca oferecer uma solução completa e intuitiva para casais que des
 
 - Organização prática para um dos momentos mais importantes da vida do casal.
 
-<h2>🔗 Link do Protótipo:</h2>
-https://www.figma.com/design/Gw830pcsNvTx8EGlyj1z0R/Wedstory?node-id=105-2&t=7RJGv8bIjQu4lio3-1
+ 
 
-<h2>👥 Equipe</h2>
+## De Lagarta para Borboleta
 
-- Gabriella Silveira Braz - 10402554
+**Projeto 1 – Lagarta:**
 
-- Giovana Liao - 10402264
+* Implementado em **JavaScript puro (Vanilla JS)**.
+* Funcionalidades principais: cadastro de convidados, lista de presentes, layout estático e interação básica via DOM.
+* Persistência via **LocalStorage**.
 
-- Giovana Ribeiro de Francisco - 10297494
+**Projeto 2 – Borboleta (atual):**
 
-- Maria Julia de Pádua - 10400630
+* Migrado para **React + Next.js**, utilizando **componentes reutilizáveis**.
+* Gerenciamento de estado com **useState** e efeitos com **useEffect**.
+* Rotas simples (`/sobre-plataforma`) e dinâmicas (`/convidados/novo?edit=id`).
+* Preparado para consumo de **API client-side**.
+* Mantido caráter extensionista: público real e impacto direto na comunidade (casais e organização de casamentos).
+
+**Vantagens da migração:**
+
+* **Componentização:** cada parte do site (lista de convidados, modal de presentes, avatar) é independente e reutilizável.
+* **Reatividade:** mudanças de estado atualizam automaticamente a interface.
+* **Escalabilidade:** mais fácil de adicionar funcionalidades sem duplicação de código.
+* **Integração futura com APIs** e dados dinâmicos.
+
+
+
+## Estrutura do Projeto
+
+```
+src/
+ ├── app/
+ │   ├── home/                     # Página inicial
+ │   ├── login/                    # Autenticação
+ │   ├── pagina-inicial/           # Dashboard com Swiper
+ │   ├── sobre-plataforma/         # Informações da plataforma
+ │   ├── sobre-nos/                # Equipe
+ │   ├── presentes/                # Lista de presentes e modal
+ │   │   └── components/
+ │   ├── convidados/
+ │   │   ├── novo/                 # Cadastro de convidados
+ │   │   ├── lista/                # Lista de convidados
+ │   │   └── import-excel/         # Importação via Excel
+ │   ├── cadastro/
+ │   │   ├── pagina1/              # Formulário passo 1
+ │   │   └── pagina2/              # Formulário passo 2
+ │   └── perfil/                   # AvatarPicker
+ ├── assets/                       # Imagens e ícones
+ └── styles/                        # CSS Modules + globals.css
+```
+
+
+
+## Funcionalidades
+
+### Cadastro
+
+* Duas páginas: informações iniciais e dados de login.
+* Fluxo intuitivo e responsivo.
+
+### Lista de Convidados
+
+* Adição manual ou via **importação de Excel**.
+* Edição, remoção e visualização detalhada.
+* Estatísticas em tempo real (adultos, crianças, bebês).
+
+### Lista de Presentes
+
+* Adicionar presentes personalizados ou predefinidos.
+* Modal interativo para inclusão de novos presentes.
+
+### Perfil
+
+* Seleção de avatar com **preview em tempo real**.
+
+### Interface e UX
+
+* **Swiper.js** no dashboard para destacar funcionalidades.
+* Componentes interativos, reutilizáveis e responsivos.
+
+
+
+## Instalação e Execução
+
+```bash
+git clone https://github.com/usuario/wedstory.git
+cd wedstory
+npm install
+npm run dev
+```
+
+Acesse: [http://localhost:3000](http://localhost:3000)
+
+
+
+## Aprendizados
+
+* Componentização e reuso de código com React.
+* Gerenciamento de estado com `useState` e efeitos colaterais com `useEffect`.
+* Migração de Vanilla JS para arquitetura moderna com Next.js.
+* Preparação para rotas dinâmicas e consumo de APIs.
+* Desenvolvimento com foco em UX e acessibilidade.
+
+
+
+# Próximos passos
+- Integração com API server-side para persistência real dos dados.
+- Melhoria de acessibilidade e responsividade.
+
+## Protótipo no Figma
+
+[Wedstory – Figma Prototype](https://www.figma.com/design/Gw830pcsNvTx8EGlyj1z0R/Wedstory?node-id=105-2&t=7RJGv8bIjQu4lio3-1)
+
+
+
+## Equipe
+
+* Gabriella Silveira Braz – 10402554
+* Giovana Liao – 10402264
+* Giovana Ribeiro de Francisco – 10297494
+* Maria Julia de Pádua – 10400630
+
