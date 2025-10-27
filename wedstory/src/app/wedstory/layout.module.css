@@ -82,16 +82,16 @@
   background-color: white;
   box-sizing: border-box;
   padding: 20px 35px;
-  border-bottom: 10px solid #F5F5F5;
+  /*border-bottom: 10px solid #F5F5F5;*/
   gap: 5px 10px;
   font-family: 'Lato', sans-serif;
   color: #9C60A5;
 }
-.footerInner p { font-size: 38px; margin: 0; }
-.footerInner p:first-child { grid-area: title; margin-bottom: 15px; }
+.footerInner p { font-size: 18px; margin: 0; }
+.footerInner p:first-child { grid-area: title; margin-bottom: 15px; font-size: 28px;}
 .num { grid-area: whatsapp-text; font-size: 18px; margin: 0; color: #C294C9; }
 .email { grid-area: email-text; font-size: 18px; margin: 0; color: #C294C9; }
-.linhaVertical { grid-area: line; border-left: 3px solid #C294C9; height: 80px; justify-self: center; }
+.linhaVertical { grid-area: line; border-left: 3px solid #C294C9; height: 80px; justify-self: center; margin-left: 458px;}
 .sobreNos, .sobrePlataforma {
   grid-area: sobre-nos / auto / auto / auto;
   font-size: 18px; color: #C294C9; text-decoration: none; margin-left: 22px; position: relative; padding-left: 18px;
