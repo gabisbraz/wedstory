@@ -53,6 +53,7 @@
   width: 480px;
   justify-content: space-between;
   flex-direction: row;
+  margin-right: 100px;
 }
 
 .brideButton {
@@ -78,6 +79,8 @@
 .dateLabel {
   font-family: "Lato", sans-serif;
   font-size: 25px;
+  margin-right: 200px; 
+  padding: 10px;
 }
 
 .date {
@@ -91,6 +94,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  margin-right: 250px;
 }
 
 .proximo {
@@ -145,6 +149,7 @@
     max-width: 350px;
     gap: 50px;
     justify-content: space-between;
+    margin-left: 50px;
   }
 
   .brideButton {
@@ -156,8 +161,8 @@
     padding: 0 10px;
   }
 
-  .dateLabel { font-size: 20px; }
-  .date { width: 160px; height: 35px; font-size: 16px; }
+  .dateLabel { font-size: 20px; margin-left: 40px;}
+  .date { width: 160px; height: 35px; font-size: 16px; margin-left: 60px;}
 
   .proximo { font-size: 20px; width: 140px; height: 38px; }
 }

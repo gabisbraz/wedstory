@@ -25,7 +25,7 @@ export default function CadastroPg1() {
 
           {/* Grupo 1: eu sou noiva/noivo */}
           <SelectButtons
-            name="eu"
+            //name="eu"
             options={[
               { value: 'noiva', label: 'Sou a noiva' },
               { value: 'noivo', label: 'Sou o noivo' },
@@ -36,17 +36,17 @@ export default function CadastroPg1() {
 
           {/* Grupo 2: meu par é noiva/noivo */}
           <SelectButtons
-            name="par"
+            //name="par"
             options={[
               { value: 'noiva', label: 'É minha noiva' },
               { value: 'noivo', label: 'É meu noivo' },
             ]}
           />
-
+          
           <p className={styles.dateLabel}>Data do casamento:</p>
           <input type="date" id="data" name="data" className={styles.date} />
         </form>
-
+          
         <Link href="/wedstory/cadastro/pagina2" className={styles.proximo}>
           Próximo
           <Image src="/assets/enviar.png" alt="" width={20} height={20} />
