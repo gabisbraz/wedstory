@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -10,13 +11,26 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css";
 
-const slidesData = [
-  { img: "/assets/noivos.jpeg",    alt: "Casal",     title: "Personalize seu site",  buttonText: "Começar Agora", buttonLink: "#" },
-  { img: "/assets/champagne.jpeg", alt: "Champagne", title: "Lista de Convidados",   buttonText: "Começar Agora", buttonLink: "/wedstory/convidados/lista" },
-  { img: "/assets/aliancas.jpeg",  alt: "Alianças",  title: "Lista de Presentes",    buttonText: "Começar Agora", buttonLink: "/wedstory/presentes" },
-];
-
 export default function HomeSwiper() {
+  const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+    async function fetchSlides() {
+      try {
+        const res = await fetch("/api/slides");
+        const data = await res.json();
+        setSlides(data);
+      } catch (err) {
+        console.error("Erro ao carregar slides:", err);
+      }
+    }
+    fetchSlides();
+  }, []);
+
+  if (slides.length === 0) {
+    return <p className={styles.loading}>Carregando slides...</p>;
+  }
+
   return (
     <div className={styles.swiperRoot}>
       <Swiper
@@ -26,7 +40,7 @@ export default function HomeSwiper() {
         pagination={{ clickable: true }}
         autoplay={false}
       >
-        {slidesData.map((slide, i) => (
+        {slides.map((slide, i) => (
           <SwiperSlide key={i} className={styles.swiperSlide}>
             <div className={styles.bgWrap}>
               <Image
