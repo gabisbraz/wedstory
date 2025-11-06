@@ -145,7 +145,7 @@ export default function ConvidadosNovoPage() {
           {adulto.map((n, i) => (
             <div key={`a-${i}`} className={styles.inputWrapper}>
               <input
-                className={styles.inputNome}
+                className={styles.input}
                 value={n}
                 onChange={(e) => setNome("adulto", i, e.target.value)}
                 placeholder="Nome do adulto"
@@ -171,7 +171,7 @@ export default function ConvidadosNovoPage() {
           {crianca.map((n, i) => (
             <div key={`c-${i}`} className={styles.inputWrapper}>
               <input
-                className={styles.inputNome}
+                className={styles.input}
                 value={n}
                 onChange={(e) => setNome("crianca", i, e.target.value)}
                 placeholder="Nome da criança"
@@ -197,7 +197,7 @@ export default function ConvidadosNovoPage() {
           {bebe.map((n, i) => (
             <div key={`b-${i}`} className={styles.inputWrapper}>
               <input
-                className={styles.inputNome}
+                className={styles.input}
                 value={n}
                 onChange={(e) => setNome("bebe", i, e.target.value)}
                 placeholder="Nome do bebê"

@@ -49,7 +49,7 @@ main {
 }
 
 .card input[type="text"],
-.input-wrapper input.input-nome {
+.inputWrapper input.input-nome {
   width: 100%;
   padding: 10px 12px;
   border: 1.5px solid #ccc;
@@ -60,7 +60,7 @@ main {
 }
 
 .card input[type="text"]:focus,
-.input-wrapper input.input-nome:focus {
+.inputWrapper input.input-nome:focus {
   border-color: #6a1b9a;
   outline: none;
   box-shadow: 0 0 0 2px rgba(106,27,154,0.2);

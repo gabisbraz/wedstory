@@ -1,24 +1,208 @@
-.page { padding: 24px; }
+/* ===== Reset e Base ===== */
+.page {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f3f7;
+  color: #333;
+  min-height: 100vh;
+  padding: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ===== Card Principal ===== */
 .card {
-  background: #fff; border-radius: 12px; padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08); max-width: 960px; margin: 0 auto; width: 100%;
+  max-width: 760px;
+  width: 100%;
+  background: #f0d9ff;
+  border: 2px solid #800080;
+  border-radius: 12px;
+  padding: 26px;
+  box-shadow: 0 6px 18px rgba(128, 0, 128, 0.08);
 }
-.card h2 { font-family: 'Playfair Display', serif; color: #6A0D91; margin-bottom: 16px; }
 
-.resumo { display: flex; gap: 16px; flex-wrap: wrap; color: #6A0D91; margin-bottom: 12px; }
-.listaContainer { display: grid; gap: 16px; }
-.vazia { color: #7c6b87; }
-
-.familia { border: 1px solid #eee; border-radius: 10px; padding: 16px; background: #faf7fb; }
-.familiaTitulo { margin: 0 0 10px; color: #6A0D91; }
-
-.grupo { margin-bottom: 10px; }
-.grupo strong { display: block; color: #41014B; margin-bottom: 4px; }
-.grupo ul { margin: 0; padding-left: 18px; }
-
-.actionsList { display: flex; gap: 12px; margin-top: 16px; }
-.salvar, .cancelar {
-  border: none; border-radius: 999px; padding: 10px 16px; cursor: pointer; font-weight: 600;
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  color: #3a003a;
 }
-.salvar { background: #8c31a8; color: #fff; }
-.cancelar { background: #ecbefa; color: #fff; text-decoration: none; display: inline-block; }
+
+/* ===== Resumo Totais ===== */
+.resumo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 16px;
+  color: #3a003a;
+  font-weight: 600;
+}
+
+/* ===== Lista ===== */
+.listaContainer {
+  margin-top: 6px;
+}
+
+.vazia {
+  color: #555;
+  font-style: italic;
+  padding: 10px;
+}
+
+/* ===== Cartões de Convidado ===== */
+.guestCard {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho do cartão */
+.guestHeader {
+  width: 100%;
+  text-align: left;
+  background: #f7f0f7;
+  cursor: pointer;
+  padding: 10px 14px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #3a003a;
+  transition: background 0.2s;
+}
+
+.guestHeader:hover {
+  background: #f0e0f0;
+}
+
+.chevron {
+  font-size: 1.1em;
+}
+
+/* Detalhes do convidado */
+.guestDetalhes {
+  padding: 10px 14px;
+  border-top: 1px solid #ddd;
+}
+
+.detalhes {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.detalhes li {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+/* Presença */
+.presenca {
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.ok {
+  background: #d4edda;
+  color: #155724;
+}
+
+.pendente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* ===== Botões ===== */
+.actionsList {
+  display: flex;
+  gap: 12px;
+  padding-top: 20px;
+}
+
+.guestActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.salvar,
+.cancelar {
+  flex: 1;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.12s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Botão principal */
+.salvar {
+  background: #800080;
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 12px rgba(128, 0, 128, 0.08);
+}
+
+.salvar:hover {
+  background: #a64ca6;
+  transform: translateY(-2px);
+}
+
+/* Botão secundário */
+.cancelar {
+  background: #efefef;
+  color: #555;
+  border: none;
+  box-shadow: 0 6px 12px rgba(128, 0, 128, 0.08);
+}
+
+.cancelar:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 720px) {
+  .card {
+    margin: 12px;
+    padding: 18px;
+  }
+
+  .resumo {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .guestHeader {
+    font-size: 0.95rem;
+  }
+
+  .actionsList {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 14px;
+  }
+
+  .guestActions {
+    flex-direction: column;
+  }
+
+  .salvar,
+  .cancelar {
+    width: 100%;
+  }
+}
