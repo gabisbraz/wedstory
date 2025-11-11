@@ -23,7 +23,7 @@ export default function CadastroPg2() {
           className={styles.form}
           onSubmit={(e) => {
             e.preventDefault();
-            window.location.href = '/wedstory/pagina_inicial';
+            window.location.href = '/wedstory/pagina-inicial';
           }}
         >
           <input type="email" className={styles.inputField} placeholder="E-mail" required />

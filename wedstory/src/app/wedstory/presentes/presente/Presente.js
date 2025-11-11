@@ -7,26 +7,26 @@ import styles from "./presente.module.css";
 
 export default function Presente({ presente, onEdit }) {
   const router = useRouter();
+  const imgSrc = (presente?.caminhoImagem ?? presente?.imagem ?? "").trim();
 
   const handleEdit = (e) => {
     e.stopPropagation();
-    if (onEdit) {
-      onEdit(presente);          
-    } else {
-      router.push(`/wedstory/presentes/${presente.id}/edit`); 
-    }
+    if (onEdit) onEdit(presente);
+    else router.push(`/wedstory/presentes/${presente.id}/edit`);
   };
 
   return (
     <article className={styles.card} aria-label={presente.nome}>
       <div className={styles.thumb}>
-        {presente.caminhoImagem ? (
+        {imgSrc ? (
           <Image
-            src={presente.caminhoImagem}
+            key={imgSrc}       // força rerender quando a URL muda
+            src={imgSrc}
             alt={presente.nome}
             width={220}
             height={160}
             className={styles.img}
+            unoptimized        
           />
         ) : (
           <div className={styles.noImg}>Sem imagem</div>

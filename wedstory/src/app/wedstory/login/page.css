@@ -4,7 +4,6 @@
   min-height: 100vh;
 }
 
-/* HEADER */
 .header {
   background-color: #eeb6ff;
   color: white;
@@ -34,7 +33,6 @@
   height: auto;
 }
 
-/* SECTION (lado direito) */
 .section {
   width: 70vw;
   display: flex;
@@ -48,7 +46,6 @@
   margin-bottom: 100px;
 }
 
-/* FORM / CAMPOS */
 .form {
   display: flex;
   flex-direction: column;
@@ -86,7 +83,6 @@
   line-height: 0;
 }
 
-/* OPÇÕES */
 .options {
   width: 450px;
   display: flex;
@@ -120,7 +116,6 @@
   text-decoration: underline;
 }
 
-/* AÇÕES */
 .actions {
   display: flex;
   flex-direction: column;
@@ -150,7 +145,6 @@
   font-size: 22px;
 }
 
-/* RESPONSIVO */
 @media (max-width: 768px) {
   .main {
     flex-direction: column;
