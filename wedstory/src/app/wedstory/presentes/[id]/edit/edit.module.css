@@ -1,0 +1,104 @@
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.previewImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  min-height: 280px;
+  background: #eef1f4;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.input {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #0a66c2;
+  box-shadow: 0 0 0 3px rgba(10, 102, 194, 0.15);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.btn {
+  height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 10px;
+  background: #0a66c2;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  opacity: 0.92;
+}
+
+.btnDanger {
+  background: #c0392b;
+}
+
+.cancelLink {
+  margin-left: auto;
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.cancelLink:hover {
+  opacity: 0.9;
+}
+
+.notFound {
+  margin-bottom: 12px;
+  color: #374151;
+}
