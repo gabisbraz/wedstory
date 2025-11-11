@@ -3,46 +3,39 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import styles from './page.css';
-
-// export const metadata = { title: 'Wedstory – Login' };
+import styles from './page.module.css';
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const senhaRef = useRef(null);
-
   const togglePassword = () => {
     setShowPassword((v) => !v);
     senhaRef.current?.focus();
   };
-
   return (
-    <main className="main">
-      <header className="header">
-        <nav className="nav">
-          <b>
-            Bem-vindo ao <br /> Wedstory
-          </b>
-        </nav>
+    <main className={styles.main}>
+      <header className={styles.header}>
+        <b>
+          Bem-vindo ao <br /> Wedstory
+        </b>
 
-        {/* Imagem dos corações */}
-        <div className="headerImageWrapper">
+        <div className={styles.headerImageWrapper}>
           <Image
             src="/assets/coracoes.png"
             alt="Corações"
             width={220}
             height={220}
-            className="headerImage"
+            className={styles.headerImage}
             priority
           />
         </div>
       </header>
 
-      <section className="section">
+      <section className={styles.section}>
         <h1>Faça seu Login!</h1>
 
         <form
-          className="form"
+          className={styles.form}
           onSubmit={(e) => {
             e.preventDefault();
             window.location.href = '/wedstory/pagina-inicial';
@@ -50,27 +43,24 @@ export default function LoginPage() {
         >
           <input
             type="text"
-            className="inputField"
+            className={styles.inputField}
             placeholder="Usuário"
             required
           />
 
-          <fieldset className="passwordContainer">
+          <fieldset className={styles.passwordContainer}>
             <input
               ref={senhaRef}
               type={showPassword ? 'text' : 'password'}
-              className="inputField"
-              id="senha"
+              className={styles.inputField}
               placeholder="Senha"
               required
-              aria-label="Senha"
             />
 
             <button
               type="button"
-              className="togglePassword"
+              className={styles.togglePassword}
               onClick={togglePassword}
-              aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
             >
               <Image
                 src={showPassword ? '/assets/olho-aberto.png' : '/assets/olho-fechado.png'}
@@ -81,29 +71,28 @@ export default function LoginPage() {
             </button>
           </fieldset>
 
-          <div className="options">
+          <div className={styles.options}>
             <label>
               <input type="checkbox" /> Lembrar
             </label>
 
-            <Link href="#" className="link">
+            <Link href="#" className={styles.link}>
               Esqueci Senha
             </Link>
           </div>
 
-          <div className="actions">
-            <button className="enviar" type="submit">
+          <div className={styles.actions}>
+            <button className={styles.enviar} type="submit">
               Enviar
               <Image
                 src="/assets/enviar.png"
                 alt=""
                 width={20}
                 height={20}
-                aria-hidden
               />
             </button>
 
-            <Link href="/wedstory/cadastro/pagina1" className="criarConta">
+            <Link href="/wedstory/cadastro/pagina1" className={styles.criarConta}>
               Criar Conta
             </Link>
           </div>

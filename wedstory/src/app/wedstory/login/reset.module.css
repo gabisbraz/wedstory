@@ -1,0 +1,17 @@
+/* reset.module.css — neutraliza o layout global apenas nesta seção */
+:global(body) {
+  display: block !important;
+  justify-content: unset !important;
+  align-items: unset !important;
+  height: auto !important;
+  margin: 0;
+  padding: 0;
+}
+
+:global(main) {
+  display: block !important;
+  justify-content: unset !important;
+  align-items: unset !important;
+  margin: 0;
+  padding: 0;
+}

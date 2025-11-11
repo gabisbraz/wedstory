@@ -8,6 +8,7 @@ import SelectButtons from './SelectButtons';
 // export const metadata = { title: 'Wedstory – Cadastro (1/2)' };
 
 export default function CadastroPg1() {
+  
   return (
     <main className={styles.main}>
       <header className={styles.header}>

@@ -7,6 +7,7 @@ import styles from './page.module.css';
 import PasswordField from './PasswordField';
 
 export default function CadastroPg2() {
+  
   return (
     <main className={styles.main}>
       <header className={styles.header}>
