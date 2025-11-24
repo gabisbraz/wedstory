@@ -63,7 +63,17 @@ src/
  └── styles/                        # CSS Modules + globals.css
 ```
 
+### Observação Importante
+Observação Importante
 
+* Ao acessar o link do ambiente de execução:
+https://glowing-bassoon-4j65r5rj9jgfjjg6-3000.app.github.dev/ é necessário complementar a URL manualmente com:
+
+* ➡️ /wedstory/home
+
+* Portanto, a navegação correta deve ser: https://glowing-bassoon-4j65r5rj9jgfjjg6-3000.app.github.dev/wedstory/home
+
+* Isso garante que o usuário seja direcionado corretamente para a página inicial do projeto.
 
 ## Funcionalidades
 
