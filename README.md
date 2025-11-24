@@ -75,6 +75,14 @@ https://glowing-bassoon-4j65r5rj9jgfjjg6-3000.app.github.dev/ é necessário com
 
 * Isso garante que o usuário seja direcionado corretamente para a página inicial do projeto.
 
+### Observação sobre o Layout (Login e Criar Conta)
+
+* As páginas "Criar Conta" e "Fazer Login" ainda apresentam um pequeno problema de carregamento inicial do layout.
+  
+* Para visualizar essas telas corretamente formatadas, recomendamos que o usuário clique no botão de refresh do navegador após acessar essas páginas.
+
+* Após recarregar, o layout se ajusta e a visualização fica correta.
+
 ## Funcionalidades
 
 ### Cadastro
